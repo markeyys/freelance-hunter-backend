@@ -1,0 +1,29 @@
+{
+  "name": "job_placement",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "register_date": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "job": {
+      "type": "belongsTo",
+      "model": "Job",
+      "foreignKey": "job_id"
+    },
+    "student": {
+      "type": "belongsTo",
+      "model": "student",
+      "foreignKey": "student_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

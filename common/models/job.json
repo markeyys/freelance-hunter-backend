@@ -1,0 +1,63 @@
+{
+  "name": "Job",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "is_freelance": {
+      "type": "boolean",
+      "required": true
+    },
+    "score": {
+      "type": "number",
+      "required": true,
+      "default": 5
+    },
+    "manpower_size": {
+      "type": "number",
+      "required": true
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "hours_per_week": {
+      "type": "number",
+      "required": true
+    },
+    "register_end_date": {
+      "type": "date",
+      "required": true
+    },
+    "pay": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "company": {
+      "type": "belongsTo",
+      "model": "Company",
+      "foreignKey": "company_id"
+    },
+    "students": {
+      "type": "hasMany",
+      "model": "student",
+      "foreignKey": "student_id",
+      "through": "job_placement"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

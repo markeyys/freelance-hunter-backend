@@ -1,0 +1,40 @@
+{
+  "name": "student",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "image": {
+      "type": "string"
+    },
+    "course": {
+      "type": "string",
+      "required": true
+    },
+    "year": {
+      "type": "number",
+      "required": true
+    },
+    "score": {
+      "type": "number",
+      "required": true,
+      "default": 5
+    },
+    "resume": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "jobs": {
+      "type": "hasMany",
+      "model": "Job",
+      "foreignKey": "job_id",
+      "through": "job_placement"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
